@@ -25,6 +25,12 @@ AMD FidelityFX Super Resolution 2 (FSR 2) is an open source, high-quality soluti
 
 You can find the binaries for FidelityFX FSR in the release section on GitHub.
 
+## Terminal injector prototype
+
+This fork adds `fsr2injector`, a Windows terminal utility for launching or attaching to a process and loading an upscaling bridge DLL. Build and usage notes live in [tools/fsr2_injector/README.md](tools/fsr2_injector/README.md).
+
+The injector is only the first layer of a universal upscaling pipeline. FSR2 is a temporal upscaler and normally requires application-provided color, depth, motion vectors, exposure, jitter, and frame timing. Apps and games that do not natively support upscaling need a separate graphics bridge DLL that hooks DXGI/Vulkan presentation and supplies an upscaling path. For apps where only the presented backbuffer is available, the bridge should start with spatial upscaling/sharpening rather than pretending full FSR2 inputs exist.
+
 # Super Resolution 2
 
 ### Table of contents

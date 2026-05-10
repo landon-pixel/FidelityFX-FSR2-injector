@@ -89,3 +89,5 @@ if(GFX_API_DX12)
     add_subdirectory(src/DX12)
 endif()
 
+add_subdirectory(tools/fsr2_injector)
+
